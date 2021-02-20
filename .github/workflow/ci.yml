@@ -1,0 +1,12 @@
+  on: pull_request
+  jobs:
+    build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+          name: Checkout code
+        - run: make build
+          name: Build docker
+        - run: make gotest
+          name: run tests
