@@ -1,0 +1,9 @@
+  on: pull_request
+  jobs:
+    build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - run: make build
+        - run: make gotest
